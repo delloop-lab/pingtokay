@@ -67,21 +67,29 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      <section className="px-6 py-20 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+      <header className="px-6 py-5 max-w-6xl mx-auto border-b border-gray-100">
+        <img
+          src="/pingokay_logo.png"
+          alt="PingOkay"
+          className="h-16 w-auto md:h-[4.8rem]"
+        />
+      </header>
+
+      <section className="px-6 py-10 md:py-16 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+          <div className="order-1">
             <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
               Peace of mind for families living apart
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Know your parent is okay.
               <span className="block text-green-600 mt-2">
                 Without feeling intrusive.
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
               A simple daily wellbeing check-in for elderly parents and carers.
               Designed for families separated by distance.
             </p>
@@ -96,12 +104,12 @@ export default function LandingPage() {
                 value={heroEmail}
                 onChange={(e) => setHeroEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="px-5 py-4 border-2 border-gray-300 rounded-2xl w-full sm:w-80 text-lg"
+                className="px-5 py-4 border-2 border-gray-300 rounded-2xl w-full sm:flex-1 text-lg"
               />
               <button
                 type="submit"
                 disabled={heroLoading}
-                className="bg-green-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg disabled:opacity-60"
+                className="bg-green-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold shadow-lg disabled:opacity-60 shrink-0"
               >
                 {heroLoading ? "Joining..." : "Join Early Access"}
               </button>
@@ -121,39 +129,64 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="bg-gray-100 rounded-3xl p-8 shadow-2xl">
-            <div className="bg-white rounded-3xl p-6 max-w-sm mx-auto shadow-lg">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-3xl mx-auto mb-4">
-                  {String.fromCodePoint(0x1f474)}
+          <div className="order-2 lg:sticky lg:top-8">
+            <div className="bg-gray-100 rounded-3xl p-5 sm:p-6 shadow-xl max-w-md mx-auto lg:mx-0 lg:ml-auto">
+              <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-lg">
+                <div className="text-center mb-5">
+                  <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-2xl mx-auto mb-3">
+                    {String.fromCodePoint(0x1f474)}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold">Good Morning Jean</h3>
+                  <p className="text-gray-500 mt-1 text-sm sm:text-base">
+                    Just checking in today.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold">Good Morning Jean</h3>
-                <p className="text-gray-500 mt-2">Just checking in today.</p>
-              </div>
 
-              <div className="space-y-4">
-                <button
-                  type="button"
-                  className="w-full bg-green-500 text-white py-4 rounded-2xl text-xl font-semibold"
-                >
-                  {String.fromCodePoint(0x1f44d)} I&apos;m okay
-                </button>
+                <div className="space-y-3">
+                  <button
+                    type="button"
+                    className="w-full bg-green-500 text-white py-3.5 sm:py-4 rounded-2xl text-lg sm:text-xl font-semibold"
+                  >
+                    {String.fromCodePoint(0x1f44d)} I&apos;m okay
+                  </button>
 
-                <button
-                  type="button"
-                  className="w-full bg-yellow-400 text-gray-900 py-4 rounded-2xl text-xl font-semibold"
-                >
-                  {String.fromCodePoint(0x26a0, 0xfe0f)} Need help
-                </button>
+                  <button
+                    type="button"
+                    className="w-full bg-yellow-400 text-gray-900 py-3.5 sm:py-4 rounded-2xl text-lg sm:text-xl font-semibold"
+                  >
+                    {String.fromCodePoint(0x26a0, 0xfe0f)} Need help
+                  </button>
 
-                <button
-                  type="button"
-                  className="w-full bg-red-500 text-white py-4 rounded-2xl text-xl font-semibold"
-                >
-                  {String.fromCodePoint(0x1f4de)} Please call me
-                </button>
+                  <button
+                    type="button"
+                    className="w-full bg-red-500 text-white py-3.5 sm:py-4 rounded-2xl text-lg sm:text-xl font-semibold"
+                  >
+                    {String.fromCodePoint(0x1f4de)} Please call me
+                  </button>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-12 md:mt-16 grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="rounded-3xl overflow-hidden shadow-xl">
+            <img
+              src="/hero%2Bpic.jpg"
+              alt="Senior woman using PingOkay on a tablet at home"
+              className="w-full h-full object-cover aspect-[4/3]"
+              width={800}
+              height={600}
+            />
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-xl">
+            <img
+              src="/hero%2Bpic%2B1.jpg"
+              alt="Senior man tapping I'm okay on PingOkay before a walk with his dog"
+              className="w-full h-full object-cover aspect-[4/3] -scale-x-100"
+              width={800}
+              height={600}
+            />
           </div>
         </div>
       </section>
@@ -227,7 +260,8 @@ export default function LandingPage() {
               <div className="text-4xl mb-4">{String.fromCodePoint(0x1f4f1)}</div>
               <h3 className="text-2xl font-bold mb-3">No App Store Needed</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Works directly from the phone home screen like a normal app.
+                Works directly from the phone or tablet screen like a normal app,
+                with no need to download anything.
               </p>
             </div>
 
@@ -241,6 +275,21 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="px-6 pb-12 md:pb-16 max-w-6xl mx-auto">
+        <div className="rounded-3xl overflow-hidden shadow-xl">
+          <img
+            src="/hero%2Bpic%2B2.jpg"
+            alt="Senior woman at home with PingOkay on her phone by the bedside"
+            className="w-full h-auto object-cover"
+            width={1200}
+            height={800}
+          />
+        </div>
+        <p className="mt-8 text-center text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 whitespace-nowrap overflow-x-auto">
+          For the days you can&apos;t be there to share the laughter, stay connected with PingOkay.
+        </p>
       </section>
 
       <section className="bg-green-50 py-20 px-6">
@@ -288,7 +337,11 @@ export default function LandingPage() {
       <footer className="py-10 px-6 border-t border-gray-200">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
-            <h3 className="text-2xl font-bold">PingOkay</h3>
+            <img
+              src="/pingokay_logo.png"
+              alt="PingOkay"
+              className="h-[3.2rem] w-auto mb-2"
+            />
             <p className="text-gray-500 mt-1">
               Helping families stay connected across distance.
             </p>
